@@ -63,6 +63,7 @@ const tableToIE = (data, name, type) => {
 	//设置excel可见属性
 
 	let fname = ''
+	
 
 	try {
 		fname = oXL.Application.GetSaveAsFilename(`${name}.${type}`);
