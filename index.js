@@ -112,7 +112,7 @@ const tableToNotIE = (function () {
 		} else {
 			const aLink = document.createElement('a');
 			aLink.href = url;
-			aLink.download = `${name}.${type}` || '';
+			aLink.download = type ? `${name}.${type}` : name;
 			let event;
 			if (window.MouseEvent) {
 				event = new MouseEvent('click');
@@ -126,7 +126,7 @@ const tableToNotIE = (function () {
 })()
 
 // 导出函数
-const table2excel = (column, data, excelName, fileType = 'xls') => {
+const table2excel = (column, data, excelName, fileType) => {
 	const typeMap = {
 		image: getImageHtml,
 		text: getTextHtml
